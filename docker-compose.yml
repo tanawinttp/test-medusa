@@ -1,0 +1,17 @@
+version: "3.9"
+name: "test_medusa_shop"
+services:
+  db:
+    image: postgres
+    volumes:
+      - medusa_db:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: tpgsql
+      POSTGRES_USER: tpgsql
+      POSTGRES_DB: test_medusa_db
+    
+volumes:
+  medusa_db:
